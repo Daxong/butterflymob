@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jikexueyuancrm.mapper.FindMapper" >
+  <!-- 查询最小推荐日期  -->
+  <update id="find" parameterType="java.lang.Integer">
+		UPDATE uuu SET name = #{status} WHERE id = #{status}
+  </update>
+ 
+</mapper>
+ <!-- SELECT  MIN(recommenDate) FROM ds123.video_recommend  resultType="java.lang.String"-->

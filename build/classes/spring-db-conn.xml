@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="  
+	http://www.springframework.org/schema/beans  
+	http://www.springframework.org/schema/beans/spring-beans.xsd  
+	http://www.springframework.org/schema/tx  
+	http://www.springframework.org/schema/tx/spring-tx.xsd  
+	http://www.springframework.org/schema/aop  
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	 <!-- 拦截每一条sql -->
+ <!--    <bean id="mybatisInterceptor" class="com.mk.wash.interceptor.MybatisInterceptor"/> -->
+	
+	<!-- 定义数据库连接数据源 -->
+<!-- 	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>org.logicalcobwebs.proxool.ProxoolDriver</value>
+		</property>
+		<property name="url">
+			<value>proxool.hcpool</value>
+		</property>
+	</bean> -->
+	
+	<!-- mybatis 的SqlSession的工厂：SqlSessionFactoryBean
+		dataSource：引用数据源
+		typeAliasesPackage：指定实体类的包名，自动将实体类的简单类名映射成别名
+    -->
+   
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	<!-- 	<property name="typeAliasesPackage" value="com.mk.wash.model"></property> -->
+		<!-- 指定sqlMapConfig总配置文件，订制的environment在spring容器中不在生效
+		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml" />
+		 -->
+		
+		<property name="mapperLocations" value="classpath*:com/jikexueyuancrm/mapper/*.xml"></property>
+		<property name="plugins">  
+     	<array>  
+     	<!-- 拦截每一条sql -->
+     <!-- 	<ref bean="mybatisInterceptor"/> -->
+     	</array>  
+    </property>      
+	</bean>
+	<!--
+		mybatis 自动扫描加载Sql映射文件/接口：MapperScannerConfigure  
+		basePackage：指定Sql映射文件/接口所在的包(自动扫描)
+		sqlSessionFactoryBeanName：指定已经定义好的sqlSessionFactory
+	 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.jikexueyuancrm.mapper"></property>
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	</bean>
+</beans>
