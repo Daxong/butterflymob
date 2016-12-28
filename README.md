@@ -1,0 +1,2 @@
+# butterflymob
+# 一个SSM框架整合案例 使用spring将MyBatis和SpringMVC桥接，当然这种说法并不对，因为springMVC是spring的一部分，方便理解在此就采用这种说法
