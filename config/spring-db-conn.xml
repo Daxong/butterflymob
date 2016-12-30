@@ -36,7 +36,7 @@
 		<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml" />
 		 -->
 		
-		<property name="mapperLocations" value="classpath*:com/jikexueyuancrm/mapper/*.xml"></property>
+		<property name="mapperLocations" value="classpath*:com/butterflymob/mapper/*.xml"></property>
 		<property name="plugins">  
      	<array>  
      	<!-- 拦截每一条sql -->
@@ -50,7 +50,7 @@
 		sqlSessionFactoryBeanName：指定已经定义好的sqlSessionFactory
 	 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.jikexueyuancrm.mapper"></property>
+		<property name="basePackage" value="com.butterflymob.mapper"></property>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
 </beans>
