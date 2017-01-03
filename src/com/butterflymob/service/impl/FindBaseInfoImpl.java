@@ -21,7 +21,8 @@ import com.butterflymob.service.FindBaseInfo;
 @Controller
 public class FindBaseInfoImpl implements FindBaseInfo
 {
-	private FindBaseInfoImpl find=new FindBaseInfoImpl();
+	@Autowired
+	private FindBaseInfoImpl find;;
 	@Autowired
 	private AppinfoMapper appinfoMapper;
 	@Autowired
@@ -32,15 +33,15 @@ public class FindBaseInfoImpl implements FindBaseInfo
 	private UsrMapper usr;
 	@Autowired
 	DeviceMapper deviceMapper;
-	  
-	
+
+
 	@Override
 	@RequestMapping(value = "/getString", method = RequestMethod.POST, produces = "application/json")
 	public Appinfo getBaseInfo(String appkey) {
 		// TODO Auto-generated method stub
 		Appinfo app=appinfoMapper.selectByPrimaryKey(appkey);
 		Appinfo appinfo=new Appinfo();
-		return appinfoMapper.selectByPrimaryKey(appkey);	
+		return appinfoMapper.selectByPrimaryKey(appkey);
 	}
 
 	@Override
@@ -53,7 +54,7 @@ public class FindBaseInfoImpl implements FindBaseInfo
 	@Override
 	public long getCountWillShares() {
 		// TODO Auto-generated method stub
-		WillshareExample example=new WillshareExample();		
+		WillshareExample example=new WillshareExample();
 		return will.countByExample(example);
 	}
 
@@ -70,7 +71,7 @@ public class FindBaseInfoImpl implements FindBaseInfo
 	@Override
 	public float getBackRate() {
 		// TODO Auto-generated method stub
-		
+
 		return find.getCountBack()/find.getCountShares();
 	}
 
@@ -86,11 +87,11 @@ public class FindBaseInfoImpl implements FindBaseInfo
 	public float getSharerate() {
 		// TODO Auto-generated method stub
 		//设备在where
-		
+
 		DeviceExample example=new DeviceExample();
-		
+
 		return find.getCountUsr()/deviceMapper.countByExample(example);
-		
+
 	}
 
 }
