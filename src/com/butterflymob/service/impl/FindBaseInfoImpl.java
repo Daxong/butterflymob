@@ -21,8 +21,8 @@ import com.butterflymob.service.FindBaseInfo;
 @Controller
 public class FindBaseInfoImpl implements FindBaseInfo
 {
-	@Autowired
-	private FindBaseInfoImpl find;;
+	
+	
 	@Autowired
 	private AppinfoMapper appinfoMapper;
 	@Autowired
@@ -71,7 +71,7 @@ public class FindBaseInfoImpl implements FindBaseInfo
 	@Override
 	public float getBackRate() {
 		// TODO Auto-generated method stub
-
+		FindBaseInfoImpl find=new FindBaseInfoImpl();
 		return find.getCountBack()/find.getCountShares();
 	}
 
@@ -89,7 +89,7 @@ public class FindBaseInfoImpl implements FindBaseInfo
 		//设备在where
 
 		DeviceExample example=new DeviceExample();
-
+		FindBaseInfoImpl find=new FindBaseInfoImpl();
 		return find.getCountUsr()/deviceMapper.countByExample(example);
 
 	}

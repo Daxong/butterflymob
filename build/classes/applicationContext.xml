@@ -53,7 +53,7 @@
 
 	<!-- mybatis 自动扫描加载Sql映射文件/接口：MapperScannerConfigure basePackage：指定Sql映射文件/接口所在的包(自动扫描)
 		sqlSessionFactoryBeanName：指定已经定义好的sqlSessionFactory -->
-	<bean class="org.mybatis.spring.mapperScannerConfigurer">
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 自动扫描mapper  -->
 		<property name="basePackage" value="com.butterflymob.mapper"></property>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
@@ -84,14 +84,14 @@
 		</property>
 	</bean>
 	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
-	<bean id="startQuertz"
+	<!-- <bean id="startQuertz"
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
 				<ref bean="doTime" />
 			</list>
 		</property>
-	</bean>
+	</bean> -->
 	<import resource="spring-db-conn.xml" />
 	<!-- 事务管理器，对mybatis操作数据库事务控制，spring使用jdbc的事务控制类 -->
 	<bean id="transactionManager"

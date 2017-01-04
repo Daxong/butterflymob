@@ -49,8 +49,8 @@
 		basePackage：指定Sql映射文件/接口所在的包(自动扫描)
 		sqlSessionFactoryBeanName：指定已经定义好的sqlSessionFactory
 	 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer ">
 		<property name="basePackage" value="com.butterflymob.mapper"></property>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-	</bean>
+	</bean> -->
 </beans>
