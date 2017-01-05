@@ -1,8 +1,15 @@
 package com.butterflymob.controller;
 
+import com.butterflymob.entityex.TodayDataTable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.butterflymob.service.FindBaseInfo;
+
+
 
 @Controller
 public class JspController {		
@@ -21,9 +28,20 @@ public class JspController {
 	 * 给jsp页面传送 今日数据 所需数据
 	 * @return
 	 */
-	@RequestMapping("/getTodaydata")
-	public ModelAndView getTodaydata(){
-		return null;
+	@Autowired
+	private FindBaseInfo findBaseInfo;
+
+	@RequestMapping("/Todaydata")
+	public @ResponseBody TodayDataTable TodaydataJson(){
+		//返回json数据
+		TodayDataTable  todayDataTable =new TodayDataTable();
+		todayDataTable.setBackCount(findBaseInfo.getCountBack());
+		todayDataTable.setBackRate(findBaseInfo.getBackRate());
+		todayDataTable.setGrantUsr(findBaseInfo.getCountUsr());
+		todayDataTable.setShareCount(findBaseInfo.getCountShares());
+		todayDataTable.setShareRate(findBaseInfo.getSharerate());
+
+		return todayDataTable;
 		
 	}
 	/**
