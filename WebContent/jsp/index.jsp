@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,22 +11,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>ButterflyMOb-app</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -67,7 +68,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend${pageContext.request.contextPath}.</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -79,7 +80,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend${pageContext.request.contextPath}.</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -91,7 +92,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend${pageContext.request.contextPath}.</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -266,36 +267,36 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="/getBaseInfo"><i class="fa fa-bar-chart-o fa-fw"></i> æ¦åµ</a>
+                        <li id="gaikuang">
+                            <a href="/getBaseInfo"><i class="fa fa-bar-chart-o fa-fw"></i>概况</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> åäº«<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>分享<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">ææåäº«</a>
+                                    <a href="flot.html">所有分享</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">åäº«è¯¦æ</a>
+                                    <a href="morris.html">分享详情</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> ç¨æ·<span class="fa arrow"></span></a>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i>用户<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                               <li>
-                                  <a href="forms.html"><i class="fa fa-edit fa-fw"></i> ç¨æ·åè¡¨</a>
+                                  <a href="forms.html"><i class="fa fa-edit fa-fw"></i>用户列表</a>
                               </li>
                               <li>
-                                  <a href="forms.html"><i class="fa fa-edit fa-fw"></i> ç¨æ·ç¹å¾åæ</a>
+                                  <a href="forms.html"><i class="fa fa-edit fa-fw"></i>用户特征分析</a>
                               </li>
                             </ul>
                         </li>
 
 
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i>ç»ç«¯<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i>终端<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="panels-wells.html">ç»ç«¯è¯¦æ</a>
@@ -319,7 +320,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>ç¤¾ä¼åå¹³å°è®¾ç½®<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>社会化平台设置<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">Second Level Item</a>
@@ -349,7 +350,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i>è¯è®º<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>评论<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="blank.html">Blank Page</a>
@@ -382,7 +383,7 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> ä»æ¥æ°æ®æ±æ»
+                            <i class="fa fa-bar-chart-o fa-fw"></i>今日数据汇总
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -430,7 +431,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i>æ¶æ®µæ°æ®åæ
+                            <i class="fa fa-bar-chart-o fa-fw"></i>时段数据分析
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -473,7 +474,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-clock-o fa-fw"></i> æ´ä½è¶å¿
+                            <i class="fa fa-clock-o fa-fw"></i> 用户
                         </div>
                         <div class="panel-body">
                           <!-- æ¾å°jsæä»¶ä¿®æ¹ -->
@@ -489,7 +490,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> Topçæ¬
+                            <i class="fa fa-bell fa-fw"></i> Top版本
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -570,21 +571,24 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="${pageContext.request.contextPath}/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+    <script src="${pageContext.request.contextPath}/vendor/raphael/raphael.min.js"></script>
+    <script src="${pageContext.request.contextPath}/vendor/morrisjs/morris.min.js"></script>
+    <script src="${pageContext.request.contextPath}/data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-
+    <script src="${pageContext.request.contextPath}/dist/js/sb-admin-2.js"></script>
+	<script type="text/javascript">
+	$( document ).ready(function() {
+		  alert( 'ready!' );
+		});</script>
 </body>
 </html>
