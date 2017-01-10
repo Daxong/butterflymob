@@ -1,1 +1,8 @@
+/applicationContext-bean.xml
+/applicationContext.xml
 /com/
+/db.properties
+/log4j.properties
+/note.txt
+/spring-db-conn.xml
+/springmvc.xml

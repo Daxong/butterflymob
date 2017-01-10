@@ -20,7 +20,7 @@
 		/> <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"
 		/> </context:component-scan> -->
 
-	<context:component-scan base-package="com.butterflymob" />
+	<context:component-scan base-package="com.butterflymob.*" />
 
 	<!-- 配置数据源 -->
 	<context:property-placeholder location="classpath:db.properties" />
@@ -60,29 +60,29 @@
 	</bean>
 	<!-- springquarz配置 -->
 	<!-- 要调用的工作类 -->
-	<bean id="quartzJob" class="com.butterflymob.util.QuartzJob"></bean>
-	<!-- 定义调用对象和调用对象的方法 -->
+	<!-- <bean id="quartzJob" class="com.butterflymob.util.QuartzJob"></bean>
+	定义调用对象和调用对象的方法
 	<bean id="jobtask"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-		<!-- 调用的类 -->
+		调用的类
 		<property name="targetObject">
 			<ref bean="quartzJob" />
 		</property>
-		<!-- 调用类中的方法 -->
+		调用类中的方法
 		<property name="targetMethod">
 			<value>work</value>
 		</property>
 	</bean>
-	<!-- 定义触发时间 -->
+	定义触发时间
 	<bean id="doTime" class="org.springframework.scheduling.quartz.CronTriggerBean">
 		<property name="jobDetail">
 			<ref bean="jobtask" />
 		</property>
-		<!-- cron表达式 -->
+		cron表达式
 		<property name="cronExpression">
 			<value>5/15 * * * * ?</value>
 		</property>
-	</bean>
+	</bean> -->
 	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
 	<!-- <bean id="startQuertz"
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">

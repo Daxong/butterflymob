@@ -22,7 +22,6 @@ public class JspController {
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.setViewName("/jsp/index");
 		return modelAndView;
-		
 	}
 	/**
 	 * 给jsp页面传送 今日数据 所需数据

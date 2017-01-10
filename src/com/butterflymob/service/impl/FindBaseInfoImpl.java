@@ -2,7 +2,7 @@ package com.butterflymob.service.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -18,7 +18,7 @@ import com.butterflymob.mapper.ShareeventMapper;
 import com.butterflymob.mapper.UsrMapper;
 import com.butterflymob.mapper.WillshareMapper;
 import com.butterflymob.service.FindBaseInfo;
-@Controller
+@Service
 public class FindBaseInfoImpl implements FindBaseInfo
 {
 	
